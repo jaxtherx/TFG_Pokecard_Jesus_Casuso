@@ -1,0 +1,29 @@
+<app-cabecera></app-cabecera>
+<main class="full-width-section">
+    <h1>Simulación de Pago</h1>
+
+    <div class="card-payment">
+        <form [formGroup]="formPago" (ngSubmit)="finalizarCompra()">
+            <div class="mb-3">
+                <label for="cardName" class="form-label">Nombre en la tarjeta</label>
+                <input type="text" class="form-control" id="cardName" formControlName="nombre" placeholder="Jesus Casuso" required>
+            </div>
+            <div class="mb-3">
+                <label for="cardNumber" class="form-label">Número de tarjeta</label>
+                <input type="text" class="form-control" id="cardNumber" formControlName="numero" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="expiry" class="form-label">Expiración</label>
+                    <input type="text" class="form-control" id="expiry" formControlName="caducidad" placeholder="MM/AA" required>
+                </div>
+                <div class="col">
+                    <label for="cvv" class="form-label">CVV</label>
+                    <input type="text" class="form-control" id="cvv" formControlName="cvv" placeholder="123" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-pay">Pagar Ahora</button>
+        </form>
+    </div>
+</main>
+<app-piepagina></app-piepagina>

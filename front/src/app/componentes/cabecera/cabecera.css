@@ -1,0 +1,82 @@
+:host {
+  display: block;
+}
+body{
+    background-color:#111;
+}
+
+.navbar{
+    background-color:#1a1a1a;
+    padding: 10px 40px;
+}
+.logo{
+    height: 80px;
+    margin-right:10px;
+}
+.top-bar{
+    width:100%;
+}
+
+.search-bar{
+    width:55%;
+}
+
+.search-bar input{
+    background-color:#2a2a2a;
+    color:white;
+    border:none;
+    padding:10px;
+}
+
+.search-bar input::placeholder{
+    color:#bbb;
+}
+
+.menu-bar{
+    width:100%;
+    border-top:1px solid #2c2c2c;
+    margin-top:15px;
+    padding-top:10px;
+}
+
+.nav-link{
+    color:white !important;
+    font-weight:600;
+    margin:0 12px;
+    transition:0.3s;
+}
+
+.nav-link:hover{
+    color:#ffc107 !important;
+    transform:translateY(-2px);
+}
+
+.icon-btn{
+    color:white;
+    font-size:1.5rem;
+    margin-left:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.icon-btn:hover{
+    color:#ffc107;
+}
+
+.navbar-brand{
+    font-size:1.6rem;
+}
+
+.badge {
+    font-size: 0.65rem; 
+    padding: 0.35em 0.5em;
+}
+
+.icon-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.position-relative {
+    margin-left: 15px;
+}

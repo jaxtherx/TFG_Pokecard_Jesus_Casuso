@@ -1,0 +1,206 @@
+<app-cabecera></app-cabecera>
+<main>
+<div id="heroCarousel"
+     class="carousel slide carousel-fade"
+     data-bs-ride="carousel"
+     data-bs-interval="5000"
+     data-bs-pause="false">
+
+    <div class="carousel-inner">
+
+        <!-- SLIDE 1 -->
+        <div class="carousel-item active">
+            <img src="/assets/carruseluno.webp" class="d-block w-100 hero-img" alt="Slide 1">
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-item">
+            <img src="/assets/carrusel4.webp" class="d-block w-100 hero-img" alt="Slide 2">
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="carousel-item">
+            <img src="/assets/carruseldos.webp" class="d-block w-100 hero-img" alt="Slide 3">
+        </div>
+
+    </div>
+
+    <!-- Flecha anterior -->
+    <button class="carousel-control-prev"
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <!-- Flecha siguiente -->
+    <button class="carousel-control-next"
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<div class="container py-5">
+    <h2 class="section-title">Novedades</h2>
+    
+    <div class="row g-3">
+        <div class="col-12 col-md-6">
+            <a href="/ofertas">
+                <div class="card news-card large-card">
+                    <img src="/assets/carruseltreswebp.webp" alt="Nueva Colección">
+                    <div class="card-overlay">
+                        <h3 class="news-title">Nueva Colección Mega</h3>
+                        <p class="news-subtitle">Nueva Colección Fuegos Fantasmales</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="row g-3">
+                <div class="col-12">
+                    <a href="/ofertas">
+                        <div class="card news-card medium-card">
+                            <img src="/assets/mystery4.webp" alt="Japonesas">
+                            <div class="card-overlay">
+                                <h3 class="news-title" style="font-size: 1.2rem;">Cartas Pokemon Japonesas</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="/ofertas">
+                        <div class="card news-card medium-card">
+                            <img src="/assets/mystery5.webp" alt="Mystery">
+                            <div class="card-overlay">
+                                <h3 class="news-title" style="font-size: 1rem;">Mystery Packs</h3>
+                                <p class="news-subtitle">Sobres y Cartas</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="/ofertas">
+                        <div class="card news-card medium-card">
+                            <img src="/assets/descubre.png" alt="Gradeo">
+                            <div class="card-overlay">
+                                <h3 class="news-title" style="font-size: 1rem;">Gradea tus Cartas</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="section-title m-0">Superventas</h2>
+        <a href="/cartas"><button class="btn btn-view-all">VER COLECCIÓN</button></a>
+    </div>
+    <div class="container-fluid full-width-section">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-lg-5 g-3">
+            
+                @for (producto of (productos() | slice:0:5); track producto.id) {
+                        <div class="col">
+                            <div class="product-card" [routerLink]="['/producto', producto.id]" style="cursor: pointer;">
+                                @if (producto.idioma == 'español') {
+                                    <img src="https://flagcdn.com/w40/es.png" class="flag-icon" alt="ES">
+                                }
+                                @else {
+                                    <img src="https://flagcdn.com/w40/jp.png" class="flag-icon" alt="JP">
+                                }
+                                <div class="img-container">
+                                    <img [src]="'http://localhost:3000/uploads/'+producto.ruta_imagen" alt="{{producto.nombre}}">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-name">{{producto.nombre}}</div>
+                                    <div>
+                                        <span class="price-now">{{producto.precio}}€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+        </div>
+    </div>
+</div>
+<div class="container py-5">
+    <h2 class="section-title">Accesorios</h2>
+    
+    <div class="row g-4">
+        <div class="col-6 col-md-4">
+            <a href="/accesorios" class="card-link">
+                <div class="card category-card text-center">
+                    <img src="/assets/accesorio4.webp" class="card-img-top" alt="Todos">
+                    <div class="card-body">
+                        <p class="category-title m-0">Todos</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+            <a href="/accesorios" class="card-link">
+                <div class="card category-card text-center">
+                    <img src="/assets/accesorio1.webp" class="card-img-top" alt="Fundas">
+                    <div class="card-body">
+                        <p class="category-title m-0">Fundas</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+            <a href="/accesorios" class="card-link">
+                <div class="card category-card text-center">
+                    <img src="/assets/albun.webp" class="card-img-top" alt="Álbumes">
+                    <div class="card-body">
+                        <p class="category-title m-0">Álbumes</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+            <a href="/accesorios" class="card-link">
+                <div class="card category-card text-center">
+                    <img src="/assets/mazos.webp" class="card-img-top" alt="Cajas">
+                    <div class="card-body">
+                        <p class="category-title m-0">Cajas de Mazos</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+            <a href="/accesorios" class="card-link">
+                <div class="card category-card text-center">
+                    <img src="/assets/accesorio2.webp" class="card-img-top" alt="Tapetes">
+                    <div class="card-body">
+                        <p class="category-title m-0">Tapetes</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-6 col-md-4">
+            <a href="/accesorios" class="card-link">
+                <div class="card category-card text-center">
+                    <img src="/assets/accesorio3.webp" class="card-img-top" alt="Almacenaje">
+                    <div class="card-body">
+                        <p class="category-title m-0">Cajas de Almacenaje</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+<app-piepagina></app-piepagina>

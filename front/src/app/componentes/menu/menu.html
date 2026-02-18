@@ -1,0 +1,76 @@
+<app-cabecera></app-cabecera>
+<main>
+    <div class="container py-5 px-4 px-md-5">
+        
+        <div class="mb-4">
+            <a (click)="cerrarSesion()" class="back-link uppercase">
+                <span class="me-2">&lt;</span> CERRAR SESIÓN
+            </a>
+        </div>
+
+        <h1 class="display-5 header-title mb-2">TU CUENTA</h1>
+        <p class="mb-5" style="font-size: 0.9rem; color: #ccc;">
+            Aquí puedes ver todos tus pedidos y gestionar la información de la cuenta.
+        </p>
+
+        <div class="d-flex flex-column align-content-around">
+            
+            
+
+            <div class="mt-5 flex-grow-1">
+                <h6 class="text-muted-custom mb-4 pb-3 border-bottom">INFORMACION PERSONAL</h6>
+                <div class="mb-4" style="font-size: 0.9rem; line-height: 1.6;">
+                    <p class="fw-bold mb-0">Nombre: {{usuario.nombre}}</p>
+                </div>
+                <button class="btn btn-yellow w-100 w-lg-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    CAMBIAR CONTRASEÑA
+                </button>
+            </div>
+            <div class="mt-5 flex-grow-1">
+                <h6 class="text-muted-custom mb-4 pb-3 border-bottom">ULTIMO PEDIDO</h6>
+                <div class="mb-4" style="font-size: 0.9rem; line-height: 1.6;">
+                    <p class="fw-bold mb-0">AQUI SE VERIA EL ULTIMO PEDIDO Y CON EL BOTON SE VERIAN TODOS</p>
+                </div>
+                <button [routerLink]="['/lista-pedidos']" class="btn btn-yellow w-100 w-lg-auto">
+                    VER PEDIDOS
+                </button>
+            </div>
+            @if(usuario.rol == 'admin'){
+            <div class="mt-5 flex-grow-1">
+                <h6 class="text-muted-custom mb-4 pb-3 border-bottom">PRODUCTOS</h6>
+                <div class="mb-4" style="font-size: 0.9rem; line-height: 1.6;">
+                    <p class="fw-bold mb-0">Aqui se agregarian los productos</p>
+                </div>
+                
+                <a href="/lista-productos"><button class="btn btn-yellow w-100 w-lg-auto">
+                    GESTIONAR PRODUCTOS
+                </button></a>
+            </div>
+        }
+        </div>
+    </div>
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content contraseña">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar Contraseña</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form [formGroup]="formCambiarContrasena" (ngSubmit)="cambiarContrasena()">
+                <div class="modal-body">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text cacatua" id="addon-wrapping"><i class="bi bi-lock cacatua"></i></span>
+                        <input formControlName="contrasena" type="password" class="form-control cacatua" placeholder="contraseña" aria-label="contraseña" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-yellow" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn-yellow" data-bs-dismiss="modal">guardar cambios</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    
+</main>
+<app-piepagina></app-piepagina>

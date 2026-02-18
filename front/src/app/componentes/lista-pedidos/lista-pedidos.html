@@ -1,0 +1,41 @@
+<app-cabecera></app-cabecera>
+<main class="pt-5 pb-5"> 
+
+     <div class="d-flex justify-content-center pb-2">
+        <h1>Listado de productos</h1>
+    </div>
+
+    <div class="brd"> 
+    <table class="table table-dark table-hover align-middle">
+      <thead>
+        <tr>
+
+          <th>Nº pedido</th>
+          <th>Fecha</th>
+          <th>Total</th>
+          <th>Metodo de pago</th>
+          <th><i class="bi bi-tools"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (pedido of pedidos(); track pedido.id) {
+        <tr class="table-dark">
+
+          <td>{{pedido.id}}</td>
+          <td>{{pedido.fecha | date:'dd/MM/yyyy'}}</td>
+          <td>{{pedido.total}}</td>
+          @if(pedido.metodo_pago == "1"){
+            <td>Tarjeta</td>
+          }
+          <td><div class="btn-group">
+            <a type="button" (click)="borrarPedido(pedido.id)" class="btn btn-outline-primary boton" ><i class="bi bi-trash"></i></a>
+          </div></td>
+        </tr>
+        }
+      </tbody>
+    </table>
+
+    </div>
+    
+</main>
+<app-piepagina></app-piepagina>

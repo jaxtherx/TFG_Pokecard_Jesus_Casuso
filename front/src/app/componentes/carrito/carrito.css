@@ -1,0 +1,74 @@
+:host {
+  display: block;
+}
+body{
+  background-color: #242424;
+}
+main {
+    background-color: #242424;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.brd{
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table{
+  border: none;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+tr{
+   --bs-table-bg: #3a3a3a !important;
+}
+
+thead {
+  background-color: #f6e05e;
+}
+
+thead th {
+  background-color: #f6e05e; 
+  color: #111111 !important;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  padding: 1rem !important;
+  border-bottom: none !important; 
+}
+.add-to-cart{
+  margin-top:20px;
+  margin-left:auto; 
+  display:block;      
+  background:#f5d742;
+  border:none;
+  padding:18px;
+  font-weight:800;
+  border-radius:12px;
+  cursor:pointer;
+  transition:.3s;
+}
+.ancla{
+   text-decoration: none;
+}
+
+.boton{
+  --bs-btn-hover-bg: #f6e05e !important;
+  --bs-btn-hover-color: #111111 !important;
+  --bs-btn-hover-border-color: #f6e05e !important;
+  --bs-btn-border-color: #f6e05e !important;
+  --bs-btn-color: #f6e05e !important;
+  --bs-btn-active-color: #111111 !important;
+  --bs-btn-active-border-color: #f6e05e !important;
+  --bs-btn-active-bg: #f6e05e !important;
+}
+.contraseña{
+    background-color: #181818;
+    color: white;
+}
+::placeholder {
+    color: white;
+}

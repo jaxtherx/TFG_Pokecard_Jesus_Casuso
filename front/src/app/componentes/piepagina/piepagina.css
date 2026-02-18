@@ -1,0 +1,50 @@
+:host {
+  display: block;
+}
+.footer{
+    background: linear-gradient(to right, #2b2b2b, #3a3a3a);
+    color:white;
+    padding:60px 0 30px 0;
+}
+
+.footer-title{
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.footer-links{
+    list-style:none;
+    padding:0;
+}
+
+.footer-links li{
+    margin-bottom:10px;
+}
+
+.footer-links a{
+    color:#cfcfcf;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:white;
+    padding-left:5px;
+}
+
+.footer-social{
+    margin-top:40px;
+    display:flex;
+    gap:25px;
+}
+
+.footer-social i{
+    font-size:1.4rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.footer-social i:hover{
+    transform:translateY(-5px);
+    color:#ffc107;
+}

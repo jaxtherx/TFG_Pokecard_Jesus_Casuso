@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+main {
+    background-color: #121212; 
+    color: #ffffff; 
+    font-family: Arial, sans-serif;
+}
+.form-control {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: white;
+}
+p{
+  color: white;
+}
+h1, h2, h3, h4, h5{
+  color: #ffcb05; 
+}
+.form-control:focus {
+    background-color: #252525;
+    color: white;
+    border-color: #555;
+    box-shadow: none;
+}
+.btn-contact {
+    background-color: #ffffff;
+    color: #121212;
+    border: none;
+    font-weight: bold;
+    padding: 10px 30px;
+}
+.btn-contact:hover {
+    background-color: #cccccc;
+}
+.legal-box {
+    font-size: 0.85rem;
+    color: #bbbbbb;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+    padding-top: 20px;
+}

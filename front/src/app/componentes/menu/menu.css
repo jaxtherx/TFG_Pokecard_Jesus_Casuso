@@ -1,0 +1,55 @@
+:host {
+  display: block;
+}
+main {
+    background-color: #242424;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.text-muted-custom {
+    color: #a0a0a0;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+}
+.btn-yellow {
+    background-color: #f6e05e;
+    color: #000;
+    font-weight: 900;
+    border-radius: 12px;
+    padding: 12px 45px;
+    border: none;
+    text-transform: uppercase;
+}
+.btn-yellow:hover {
+    background-color: #e3cc4b;
+}
+table{
+    background-color: #2d2d2d;
+    --bs-table-bg: transparent !important; 
+    --bs-table-color: white !important;
+    border-color: #333 !important;
+}
+.header-title {
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -1px;
+}
+.back-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+}
+.contraseña{
+    background-color: #181818;
+    color: white;
+}
+.cacatua{
+    background-color: #2d2d2d;
+    color: white;
+}
+::placeholder {
+    color: white;
+}

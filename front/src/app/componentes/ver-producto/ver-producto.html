@@ -1,0 +1,48 @@
+<app-cabecera></app-cabecera>
+
+<main>
+<div class="product-container justify-content-center align-items-center">
+
+  @if (producto(); as p) {
+  <div class="image-section">
+    <img 
+      [src]="'http://localhost:3000/uploads/' + p.ruta_imagen"
+      [alt]="p.nombre"
+    >
+  </div>
+
+  <div class="info-section">
+
+    <h1>{{ p.nombre }}</h1>
+
+    <div class="price-section">
+      <span class="current-price">
+        {{ p.precio }}€
+      </span>
+    </div>
+    <h4>Descripcion:</h4>
+    <p class="description" [innerHTML]="p.descripcion.replace(/\n/g, '<br>')">
+    </p>
+
+    <div class="quantity-selector">
+      <button (click)="decrementar()">-</button>
+      <span>{{ cantidad }}</span>
+      <button (click)="incrementar()">+</button>
+    </div>
+    @if(usuario){
+    <button (click)="agregarProducto()" class="add-to-cart">
+      AÑADIR A LA CESTA
+    </button>
+    }@else{
+      <button [routerLink]="['/iniciosesion']" class="add-to-cart">
+        Inicia sesion para añadir a la cesta
+      </button>
+    }
+
+  </div>
+  }
+
+</div>
+</main>
+
+<app-piepagina></app-piepagina>

@@ -1,0 +1,45 @@
+@if(registrar === false){
+<main>
+    <div class="login-container">
+        <h1 class="login-title">INICIAR SESIÓN</h1>
+        <p class="login-subtitle">Escribe tu correo electrónico y contraseña para iniciar sesión:</p>
+
+        <form [formGroup]="this.formLogin" (ngSubmit)="login()">
+            <input type="email" class="form-control" formControlName="email" placeholder="Correo electrónico" required>
+
+            <div class="password-wrapper mb-3">
+                <input type="password" class="form-control" formControlName="passwd" placeholder="Contraseña" required>
+            </div>
+
+            <button type="submit" class="btn-login">INICIAR SESIÓN</button>
+        </form>
+
+        <p class="register-text">
+            ¿No tienes una cuenta? <a (click)="cambioRegistro()" class="register-link">Registro</a>
+        </p>
+    </div>
+</main>
+}
+@if(registrar === true){
+<main>
+    <div class="login-container">
+        <h1 class="login-title">REGISTRO</h1>
+        <p class="login-subtitle">Escribe tus datos para registrarte</p>
+
+        <form [formGroup]="this.formRegister" (ngSubmit)="registro()">
+            <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre" required>
+            <input type="email" class="form-control" formControlName="email" placeholder="Correo electrónico" required>
+
+            <div class="password-wrapper mb-3">
+                <input type="password" class="form-control" formControlName="passwd" placeholder="Contraseña" required>
+            </div>
+
+            <button type="submit" class="btn-login">REGISTRARSE</button>
+        </form>
+
+        <p class="register-text">
+            ¿Ya tienes una cuenta? <a (click)="cambioRegistro()" class="register-link">Inicia sesion</a>
+        </p>
+    </div>
+</main>
+}

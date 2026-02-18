@@ -1,0 +1,35 @@
+<app-cabecera></app-cabecera>
+<main>
+    <div class="container-fluid full-width-section">
+        <span class="custom-badge bg-new">ACCESORIOS</span>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            @for (producto of productos(); track producto.id) {
+                    @if (producto.categoria_id == 3) {
+                        <div class="col">
+                            <div class="product-card" [routerLink]="['/producto', producto.id]" style="cursor: pointer;">
+                                @if (producto.idioma == 'español') {
+                                    <img src="https://flagcdn.com/w40/es.png" class="flag-icon" alt="ES">
+                                }
+                                @else if (producto.idioma == 'ingles') {    
+                                    <img src="https://flagcdn.com/w40/gb.png" class="flag-icon" alt="GB">
+                                }
+                                @else {
+                                    <img src="https://flagcdn.com/w40/jp.png" class="flag-icon" alt="EN">
+                                }
+                                <div class="img-container">
+                                    <img [src]="'http://localhost:3000/uploads/'+producto.ruta_imagen" alt="{{producto.nombre}}">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-name">{{producto.nombre}}</div>
+                                    <div>
+                                        <span class="price-now">{{producto.precio}}€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+        </div>
+    </div>
+</main>
+<app-piepagina></app-piepagina>
